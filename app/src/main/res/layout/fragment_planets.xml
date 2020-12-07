@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cylit.swapp.viewModels.PlanetViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        tools:context=".ui.PlanetsFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/planets_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:dataPlanets="@{viewModel.all}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_planeta" />
+
+        <include
+            android:id="@+id/progressBar"
+            layout="@layout/custom_progress_bar"
+            app:booleanToVisibility="@{viewModel.loading}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

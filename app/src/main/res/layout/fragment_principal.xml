@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        tools:context=".ui.PrincipalFragment">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/star_wars"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/btnStarship"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnPlanets"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/darth_vader"
+            android:drawableTint="@color/white"
+            android:text="@string/planets"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnFilms" />
+
+
+        <Button
+            android:id="@+id/btnFilms"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/bb_8"
+            android:drawableTint="@color/white"
+            android:text="@string/films"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnPlanets"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnVehicles" />
+
+        <Button
+            android:id="@+id/btnVehicles"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ver Vehículos"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/btnFilms"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnPeople" />
+
+        <Button
+            android:id="@+id/btnPeople"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:backgroundTint="@color/black"
+            android:drawableLeft="@drawable/chewbacca"
+            android:drawableTint="@color/white"
+            android:text="@string/people"
+            android:textColor="@android:color/white"
+            app:layout_constraintBottom_toTopOf="@id/btnVehicles"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnStarship" />
+
+        <Button
+            android:id="@+id/btnStarship"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Ver Naves"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/btnPeople"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.cylit.swapp.viewModels.FilmViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:background="@android:color/white"
+        tools:context=".ui.FilmDetailFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btnLike"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@{viewModel.film.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtDirector"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@{viewModel.film.director}"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+                <TextView
+                    android:id="@+id/txtProducer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@{viewModel.film.producer}"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txtDirector" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@{viewModel.film.openingCrawl}"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintTop_toBottomOf="@id/txtProducer" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageButton
+            android:id="@+id/btnLike"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/transparent"
+            android:onClick="@{() -> viewModel.likeFilm()}"
+            android:src="@drawable/baseline_thumb_up_alt_24"
+            android:tint="#4CAF50"
+            app:booleanToVisibility="@{!viewModel.loading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnNoLike"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scroll" />
+
+        <ImageButton
+            android:id="@+id/btnNoLike"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/transparent"
+            android:onClick="@{() -> viewModel.noLikeFilm()}"
+            android:src="@drawable/baseline_thumb_down_24"
+            android:tint="#B51A1A"
+            app:booleanToVisibility="@{!viewModel.loading}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btnLike"
+            app:layout_constraintTop_toBottomOf="@id/scroll" />
+
+        <include
+            android:id="@+id/progressBar"
+            layout="@layout/custom_progress_bar"
+            app:booleanToVisibility="@{viewModel.loading}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="planet"
+            type="com.cylit.swapp.model.PlanetDto" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{planet.name}"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtClimateTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/climate"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/lineTerrain"
+            app:layout_constraintEnd_toStartOf="@id/txtClimate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineClimate" />
+
+        <TextView
+            android:id="@+id/txtClimate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{planet.climate}"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/lineTerrain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtClimateTitle"
+            app:layout_constraintTop_toBottomOf="@id/lineClimate" />
+
+        <TextView
+            android:id="@+id/txtTerrainTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/terrain"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/linePopulation"
+            app:layout_constraintEnd_toStartOf="@id/txtTerrain"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lineTerrain" />
+
+        <TextView
+            android:id="@+id/txtTerrain"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{planet.terrain}"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textStyle="normal"
+            app:layout_constraintBottom_toTopOf="@id/linePopulation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txtTerrainTitle"
+            app:layout_constraintTop_toBottomOf="@id/lineTerrain" />
+
+        <TextView
+            android:id="@+id/txtPopulationTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/population"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/txtPopulation"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linePopulation" />
+
+        <TextView
+            android:id="@+id/txtPopulation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@string/population"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.728"
+            app:layout_constraintStart_toEndOf="@+id/txtPopulationTitle"
+            app:layout_constraintTop_toBottomOf="@+id/linePopulation"
+            app:numberFormatted="@{planet.population}" />
+
+        <View
+            android:id="@+id/lineClimate"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/txtClimate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtName" />
+
+        <View
+            android:id="@+id/lineTerrain"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/lineTerrain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtClimate" />
+
+        <View
+            android:id="@+id/linePopulation"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@android:color/black"
+            app:layout_constraintBottom_toTopOf="@id/txtPopulation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txtTerrain" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
