@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="@{film.title}"
+            android:textSize="18sp"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textStyle="bold"
@@ -62,11 +63,11 @@
             app:tint="@android:color/holo_red_dark" />
 
         <TextView
-            android:id="@+id/txtOpeningCrawl"
+            android:id="@+id/txtCreated"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="5dp"
-            android:text="@{film.created}"
+            app:formatDate="@{film.release_date}"
             android:textAlignment="center"
             android:textColor="@android:color/black"
             android:textSize="12sp"

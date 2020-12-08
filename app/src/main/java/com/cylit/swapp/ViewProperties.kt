@@ -8,6 +8,7 @@ import com.cylit.swapp.model.*
 import com.cylit.swapp.ui.FilmsAdapter
 import com.cylit.swapp.ui.PeopleAdapter
 import com.cylit.swapp.ui.PlanetsAdapter
+import java.util.*
 
 @BindingAdapter("dataPlanets")
 fun setRecyclerViewProperties(recyclerView: RecyclerView?, data: MutableList<PlanetDto>?) {
@@ -44,5 +45,12 @@ fun TextView.setNumberFormatted(numero: String?) {
 fun View.visibilityByBoolean(bool: Boolean?) {
     bool?.let {
         visibility = booleanToVisibility(it)
+    }
+}
+
+@BindingAdapter("formatDate")
+fun TextView.formatDate(date: Date?) {
+    date?.let {
+        text = stringFormatDate(it)
     }
 }

@@ -3,6 +3,8 @@ package com.cylit.swapp.model
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
+import java.util.*
+import kotlin.collections.ArrayList
 
 @Parcelize
 data class FilmDetailDto(
@@ -14,8 +16,9 @@ data class FilmDetailDto(
     var director: String? = null,
     var producer: String? = null,
     var url: String? = null,
-    var created: String? = null,
+    var created: Date? = null,
     var edited: String? = null,
+    var release_date: Date? = null,
     @SerializedName("species")
     var speciesUrls: ArrayList<String>? = null,
     @SerializedName("starships")
