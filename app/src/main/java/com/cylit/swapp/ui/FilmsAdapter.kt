@@ -2,13 +2,11 @@ package com.cylit.swapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import com.cylit.swapp.R
 import com.cylit.swapp.databinding.ItemFilmBinding
-import com.cylit.swapp.generated.callback.OnClickListener
 import com.cylit.swapp.model.FilmDetailDto
 
 class FilmsAdapter(_clickListener: ClickItemListener, _lifecycleOwner: LifecycleOwner) :

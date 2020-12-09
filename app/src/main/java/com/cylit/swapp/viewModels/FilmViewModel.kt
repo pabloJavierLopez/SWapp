@@ -2,8 +2,8 @@ package com.cylit.swapp.viewModels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.cylit.swapp.repositories.IFilmRepository
 import com.cylit.swapp.model.FilmDetailDto
+import com.cylit.swapp.repositories.IFilmRepository
 import kotlinx.coroutines.launch
 
 class FilmViewModel(private val filmRepository: IFilmRepository) : CustomViewModel() {

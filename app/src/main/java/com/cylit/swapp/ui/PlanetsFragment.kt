@@ -8,9 +8,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.cylit.swapp.R
-import com.cylit.swapp.repositories.PlanetRepository
 import com.cylit.swapp.databinding.FragmentPlanetsBinding
 import com.cylit.swapp.factories.PlanetViewModelFactory
+import com.cylit.swapp.repositories.PlanetRepository
 import com.cylit.swapp.viewModels.PlanetViewModel
 
 class PlanetsFragment : Fragment(R.layout.fragment_planets) {

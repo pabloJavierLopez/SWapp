@@ -7,9 +7,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.cylit.swapp.R
-import com.cylit.swapp.repositories.PeopleRepository
 import com.cylit.swapp.databinding.FragmentPeopleBinding
 import com.cylit.swapp.factories.PeopleViewModelFactory
+import com.cylit.swapp.repositories.PeopleRepository
 import com.cylit.swapp.viewModels.PeopleViewModel
 
 class PeopleFragment : Fragment(R.layout.fragment_people) {

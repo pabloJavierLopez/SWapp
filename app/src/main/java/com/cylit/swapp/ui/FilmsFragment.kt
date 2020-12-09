@@ -8,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.cylit.swapp.R
-import com.cylit.swapp.repositories.FilmRepository
 import com.cylit.swapp.databinding.FragmentFilmsBinding
 import com.cylit.swapp.factories.FilmViewModelFactory
 import com.cylit.swapp.model.FilmDetailDto
+import com.cylit.swapp.repositories.FilmRepository
 import com.cylit.swapp.viewModels.FilmViewModel
 
 class FilmsFragment : Fragment(R.layout.fragment_films) {

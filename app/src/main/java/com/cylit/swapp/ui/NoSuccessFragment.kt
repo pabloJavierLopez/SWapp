@@ -7,16 +7,11 @@ import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.Navigation
 import com.cylit.swapp.R
 import com.cylit.swapp.databinding.FragmentNoLikeBinding
-import com.cylit.swapp.databinding.FragmentSuccessBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
 
 class NoSuccessFragment : DialogFragment() {
 

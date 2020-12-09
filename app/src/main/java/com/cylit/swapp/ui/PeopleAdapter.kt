@@ -6,8 +6,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cylit.swapp.R
 import com.cylit.swapp.model.PeopleDto
-import java.text.DecimalFormat
-import java.util.*
 
 class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.View>() {
     private var planetas: List<PeopleDto> = listOf()
